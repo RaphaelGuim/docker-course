@@ -29,7 +29,7 @@ Use **-a** flag to including those that are stopped.
 --- 
 To run a image you should add the flag **-p localport:exposedPort**
 ```
-docker run -p 3000:80 DOCKERIMAGE
+docker run -p 3000:80 IMAGE_ID
 ```
 
 Docker Images is a static photo of your app. If you change the source code, there is no impact in your images.
@@ -104,3 +104,34 @@ These commands are essential for managing Docker containers and images on your l
 
 ---
 * **docker run --rm <ID>** removes a container when it is stoped.
+
+* **docker images** list all images
+
+* **docker inspect <id>** show all configurations
+
+### Docker `copy` Command
+Copy files ou folder inside a container. It's use to configuration file, logs, etc.
+
+* **docker copy <path_to_folder/file> <container_name>:<path_in_container>** 
+
+or
+* **docker copy <container_name>:<path_in_container> <path_to_folder/file>** 
+
+
+
+### How to Name Containers?
+ * **docker run --name <CUSTOM_NAME> <IMAGE_ID>** Use the flag --name to customize your containers name.
+
+ ### How to tag Images?
+ Tags are can be divided in two parts. NAME:TAG
+ - Name: Group of, possible more specializesd, images
+ - Tag: Defines as specializede image.
+
+
+ * **docker build -t <CUSTOM_NAME> .** Use the flag --name to customize your containers name.
+
+## Rename Images
+To rename images use the command `docker tag`
+```
+docker tag <old_image_name> <new_image_name>
+```
