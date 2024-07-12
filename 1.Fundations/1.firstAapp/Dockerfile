@@ -8,6 +8,8 @@ RUN npm install
 
 COPY . .
 
+VOLUME [ "app/feedback" ]
+
 EXPOSE 3000
 
 CMD ["node", "app.mjs"]
